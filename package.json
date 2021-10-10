@@ -1,0 +1,69 @@
+{
+  "name": "tauri-and-vue-project-skeleton",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit --coverage",
+    "test:e2e": "vue-cli-service test:e2e --mode development",
+    "lint": "vue-cli-service lint",
+    "tauri": "tauri",
+    "tauri:build": "vue-cli-service tauri:build",
+    "tauri:serve": "vue-cli-service tauri:serve"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "1.0.0-beta.8",
+    "axios": "0.22.0",
+    "axios-retry": "3.2.0",
+    "core-js": "^3.6.5",
+    "quasar": "2.1.0",
+    "vue": "3.1.5",
+    "vue-i18n": "9.1.6",
+    "vue-router": "4.0.6"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.0-beta.10",
+    "@types/faker": "^5.1.6",
+    "@types/jest": "^24.0.19",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "^4.5.13",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "3.1.5",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "compression-webpack-plugin": "^6.1.1",
+    "cypress": "^7.5.0",
+    "cypress-vue-unit-test": "^3.5.1",
+    "eslint": "^6.7.2",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.0.0",
+    "faker": "^5.2.0",
+    "lint-staged": "^9.5.0",
+    "postcss-rtl": "^1.2.3",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.12",
+    "sass-loader": "10.1.1",
+    "typescript": "4.1.5",
+    "vue-cli-plugin-quasar": "^4.0.0-beta.1",
+    "vue-cli-plugin-tauri": "~1.0.0-beta.6",
+    "vue-jest": "^5.0.0-0"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "pre-push": "npm run test:unit -- --coverage --verbose && npm run test:e2e -- --headless"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

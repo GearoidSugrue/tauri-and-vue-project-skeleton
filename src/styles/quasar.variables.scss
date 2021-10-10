@@ -1,0 +1,93 @@
+// Quasar Variable Overrides - https://next.quasar.dev/style/sass-scss-variables#variables-list
+$primary   : #027CB5;
+$secondary : #A0AEBA;
+$accent    : #4EC3F7;
+
+$positive  : #21BA45;
+$negative  : #D92732;
+$info      : #027CB5;
+$warning   : #CD7800;
+
+// Custom Colors
+$font-color							: rgba(255, 255, 255, 0.7);
+
+
+// Font Weights - Note: The link to the font in index html must be updated if adding more weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+
+
+// Z-Indexes
+$z-index-component-error: 200;
+$z-index-card: 100;
+$z-index-header: 100;
+$z-index-footer: 0;
+
+
+// TODO simplify or delete most of these breakpoints as this many is unnecessary
+
+// Breakpoints 
+$bp-very-small: 300px;
+$bp-small: 500px;
+$bp-medium: 700px;
+$bp-large: 1200px;
+$bp-very-large: 1600px;
+
+$bp-above-very-small: #{$bp-very-small + 1px};
+$bp-above-small: #{$bp-small + 1px};
+$bp-above-medium: #{$bp-medium + 1px};
+$bp-above-large: #{$bp-large + 1px};
+$bp-above-very-large: #{$bp-very-large + 1px};
+
+// Min & Max Width Breakpoints
+@mixin very-small-breakpoint {
+	@media screen and (max-width: $bp-very-small) {
+		@content;
+	}
+}
+@mixin small-breakpoint {
+	@media screen and (min-width: $bp-above-very-small) and (max-width: $bp-small) {
+		@content;
+	}
+}
+@mixin medium-breakpoint {
+	@media screen and (min-width: $bp-above-small) and (max-width: $bp-medium) {
+		@content;
+	}
+}
+@mixin large-breakpoint {
+	@media screen and (min-width: $bp-above-medium) and (max-width: $bp-large) {
+		@content;
+	}
+}
+@mixin very-large-breakpoint {
+	@media screen and (min-width: $bp-above-large) and (max-width: $bp-very-large) {
+		@content;
+	}
+}
+
+// Max Width Only Breakpoints
+@mixin max-small-breakpoint {
+	@media screen and (max-width: $bp-small) {
+		@content;
+	}
+}
+@mixin max-medium-breakpoint {
+	@media screen and (max-width: $bp-medium) {
+		@content;
+	}
+}
+@mixin max-large-breakpoint {
+	@media screen and (max-width: $bp-large) {
+		@content;
+	}
+}
+@mixin max-very-large-breakpoint {
+	@media screen and (max-width: $bp-very-large) {
+		@content;
+	}
+}
+
+
+

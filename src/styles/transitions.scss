@@ -1,0 +1,50 @@
+
+@mixin fade-in-out($duration: 220ms, $timing: ease-in-out, $delay: 0ms) {
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active,
+  &-leave-active {
+    transition: opacity $duration $timing $delay;
+  }
+}
+
+.fade {
+  @include fade-in-out;
+
+  &__short {
+    @include fade-in-out($duration: 120ms);
+  }
+}
+
+
+
+// Fade in the element but leaves immediately. Useful for spinners when the loaded content has it's own fade in animation.
+@mixin fade-in($duration: 220ms, $timing: ease-in-out, $delay: 0ms) {
+  &-enter-from,
+  &-leave-to {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    transition: opacity $duration $timing $delay;
+  }
+
+  &-leave-active {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  @include fade-in;
+
+  &__short {
+    @include fade-in($duration: 120ms);
+  }
+
+  &--delayed {
+    @include fade-in($duration: 120ms, $delay: 500ms);
+  }
+}

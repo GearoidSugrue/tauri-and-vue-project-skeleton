@@ -1,0 +1,11 @@
+@import './quasar.variables.scss';
+@import '~quasar-styl';
+@import '~quasar-variables-styl';
+// @import '~quasar-addon-styl';
+
+
+// Default Overrides for Quasar SCSS
+body {
+  font-family: Montserrat, sans-serif;
+	-webkit-font-smoothing: auto;
+}

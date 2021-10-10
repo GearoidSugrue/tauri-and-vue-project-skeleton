@@ -1,0 +1,13 @@
+{
+  "header": {
+    "dummyText": "this is the header"
+  },
+  "footer": {
+    "dummyText": "this is the footer"
+  },
+  "componentLoadError": {
+    "title": "Something went wrong",
+    "message": "Please check your network connection and try again.",
+    "reload": "Try Again"
+  }
+}
